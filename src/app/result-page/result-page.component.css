@@ -1,117 +1,4 @@
-/* #resultPageDiv{
-    width:100vw;
-    color: whitesmoke;
-    text-align: center;
 
-
-}
-#cityLabel{
-    font-size: 8vw;
-}
-#bigWeatherIconDiv{
-    max-width: 23vw;
-    grid-area: c4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: c1;
-    margin: 0 auto;
-}
-#rightSide{
-    grid-area: c2;
-    margin: auto auto;
-    display: grid;
-    grid-template: 
-    " . x1 x1 . "
-    " . x1 x1 . "
-    " x3 x2 x2 x4"
-    " x3 x2 x2 x4 "
-}
-#bigWeatherIcon{
-    max-width: 14vw;
-}
-#tempAndDescription{
-    font-size: 8vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: x1;
-}
-#windDiv, #humidityDiv{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 1em;
-    font-size: 2vw;
-}
-#windAndHumidity{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: x2;
-    text-align: center;
-}
-.windAndHumidityIconsDiv{
-    margin: auto auto;
-}
-#windIcon{
-    grid-area: x3;
-    max-width: 5vw;
-}
-#humidityIcon{
-    grid-area: x4;
-    max-width: 5vw;
-}
-#actualWeatherDiv{
-    height: 60vh;
-    display: grid;
-    grid-template: "c1 c2";
-    
-}
-#closeButton{
-   position: absolute;
-   top: 1vh;
-   right: 5vw; 
-}
-#weatherForecastDiv{
-    height: 40vh;
-    background: whitesmoke;
-    color: gray;
-    overflow: hidden;
-}
-#5dayWeatherLabel{
-    margin: 1vh 0 0 0;
-}
-.forecastIconImg{
-    max-width: 8vw;
-}
-.minMaxTemp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.minTemp, .maxTemp{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1vw;
-}
-.forecastTab{
-    margin: 0 auto;
-    font-size: 1.5vw;
-}
-#forecastTabs{
-    display: flex;
-    justify-content: space-between;
-
-}
-.forecastIconImg{
-    margin: 1vh;
-} */
 @media all and (min-width: 900px){
     #resultPageDiv{
         width:100vw;
@@ -121,6 +8,10 @@
     #cityLabel{
         font-size: 7vw;
     }
+    .mobileHr{
+        display:none;
+    }
+
     #bigWeatherIconDiv{
         max-width: 20vw;
         grid-area: c4;
@@ -195,7 +86,7 @@
         color: gray;
         overflow: hidden;
     }
-    #5dayWeatherLabel{
+    #FivedayWeatherLabel{
         margin: 1vh 0 0 0;
     }
     .forecastIconImg{
@@ -213,41 +104,49 @@
         align-items: center;
         margin: 1vw;
     }
+    .mobileForecastDiv{
+        display: flex;
+        flex-direction: row;
+    }
     .forecastTab{
-        margin: 0 auto;
+        margin: 2vh 3vw;
         font-size: 1.5vw;
+
     }
     #forecastTabs{
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: center;
     }
     .forecastIconImg{
         margin: 1vh;
     }
+    #minAnaMaxTemp{
+        display: none;
+    }
 }
 
 @media all and (max-width: 899px){
+    img{
+        max-width: 20vw;
+    }
 #resultPageDiv{
     display: flex;
     flex-direction: column;
     align-items:center;
-    /* background-image: url(/assets/bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover; */
     color: whitesmoke;
     overflow-x: hidden;
-
-
 }
 #closeButton{
     position: absolute;
     top: 1vh;
-    right: 10vw; 
+    right: 12vw; 
  }
  #cityLabel{
     font-size: 12vw;
     text-align: center;
     padding-top: 5vh;
+    padding-bottom: 4vh;
 }
 #bigWeatherIconDiv{
     max-width: 12vw;
@@ -257,15 +156,116 @@
     justify-content: center;
     align-items: center;
     grid-area: c1;
-    margin: 0 auto;
+    margin: 2vh auto;
 }
 #bigWeatherIcon{
 max-width: 35vw;
 }
+
 #tempAndDescription{
-    order: -30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vh;
+    grid-area: x1;
+}
+#descriptionLabel{
+    order:-1;
 }
 
+#windDiv, #humidityDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3vw;
+    font-size: 5vw;
+}
+#windAndHumidity{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: x2;
+    text-align: center;
+    margin-top: 15vh;
+    
+}
+.windAndHumidityIconsDiv{
+    margin: auto auto;
+    margin-top: 15vh;
+    
+}
+#windIcon{
+    grid-area: x3;
+    max-width: 18vw;
+}
+#humidityIcon{
+    grid-area: x4;
+    max-width: 18vw;
+}
+#rightSide{
+    margin: auto auto;
+    display: grid;
+    grid-template: 
+    "x1 x1 x1 x1"
+    "x1 x1 x1 x1"
+    " x3 x2 x2 x4"
+    " x3 x2 x2 x4 ";
+}
+#minAnaMaxTemp{
+    /* display: none; */
+    display: flex;
+    margin-top:4vh;
+    
+}
+.detailsDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3vw;
+    font-size: 5vw;
+}
+#minTIcon{
+    order:-3;
+}
+#weatherForecastDiv{
+    color: gray;
+    overflow-x: scroll;
+}
+#FivedayWeatherLabel{
+    max-width: 80vw;
+    text-align: center;
+}
+.mobileHr{
+    color: gray;
+}
+.mobileForecastDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.forecastTab{
+    margin: 4vh;
+    text-align: center;
+}
+.minMaxTemp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.minTemp, .maxTemp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+.forecastIconImg{
+    margin: 1vh;
+}
 
 
 }

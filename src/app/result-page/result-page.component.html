@@ -28,12 +28,32 @@
       <div class="windAndHumidityIconsDiv" id="humidityIcon">
           <img id="humidityIcon" src="../../assets/019-thermometer.svg" alt="Humidity">
       </div>
-
     </div>
   </div>
+  <!-- Poniższa sekcja widoczna tylko w wersji mobilnej -->
+  <div id="minAnaMaxTemp">
+      <div id="minDiv" class="detailsDiv">
+        <span id="minT">Min.°C</span>
+        <span id="minTInfo">30°C</span>
+      </div>
+      <div id="maxDiv" class="detailsDiv">
+          <span id="maxT">Max.°C </span>
+          <span id="maxTInfo">30°C</span>
+      </div>
+    
+    <div class="minAndMaxIconsDiv" id="minTIcon">
+        <img id="minTIcon" src="../../assets/018-thermometer.svg" alt="Wind">
+    </div>
+    <div class="minAndMaxIconsDiv" id="maxTIcon">
+        <img id="maxTIcon" src="../../assets/020-thermometer.svg" alt="Humidity">
+    </div>
+  </div> 
+  <!-- SEKCJA Z PROGNOZĄ POGODY -->
   <div id="weatherForecastDiv">
-    <h1 id="5dayWeatherLabel">5 day weather forecast for Kraków</h1>
+    <h1 id="FivedayWeatherLabel">5 day weather forecast for Kraków</h1>
     <div id="forecastTabs">
+
+      <div class="mobileForecastDiv">
     <div class="forecastTab" >
       <div class="dateIconDescription">
         <span class="forecastDate">21.07.2019</span>
@@ -56,7 +76,7 @@
 
     <div class="forecastTab" >
         <div class="dateIconDescription">
-          <span class="forecastDate">21.07.2019</span>
+          <span class="forecastDate">22.07.2019</span>
           <div class="forecastIconsDiv" class="forecastIcon">
               <img class="forecastIconImg" src="../../assets/042-rain.svg" alt="forecastIcon">
           </div>
@@ -73,10 +93,13 @@
           </div>
         </div>
       </div>
+    </div>
 
+      <hr class="mobileHr">
+      <div class="mobileForecastDiv">
       <div class="forecastTab" >
           <div class="dateIconDescription">
-            <span class="forecastDate">21.07.2019</span>
+            <span class="forecastDate">23.07.2019</span>
             <div class="forecastIconsDiv" class="forecastIcon">
                 <img class="forecastIconImg" src="../../assets/042-rain.svg" alt="forecastIcon">
             </div>
@@ -96,7 +119,7 @@
 
         <div class="forecastTab" >
             <div class="dateIconDescription">
-              <span class="forecastDate">21.07.2019</span>
+              <span class="forecastDate">24.07.2019</span>
               <div class="forecastIconsDiv" class="forecastIcon">
                   <img class="forecastIconImg" src="../../assets/042-rain.svg" alt="forecastIcon">
               </div>
@@ -113,10 +136,12 @@
               </div>
             </div>
           </div>
-
+        </div>
+          <hr class="mobileHr">
+          <div class="mobileForecastDiv">
           <div class="forecastTab" >
               <div class="dateIconDescription">
-                <span class="forecastDate">21.07.2019</span>
+                <span class="forecastDate">25.07.2019</span>
                 <div class="forecastIconsDiv" class="forecastIcon">
                     <img class="forecastIconImg" src="../../assets/042-rain.svg" alt="forecastIcon">
                 </div>
@@ -134,6 +159,7 @@
               </div>
             </div>
           </div>
+        </div>
 
   </div>
 </div>
