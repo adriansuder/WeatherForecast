@@ -1,0 +1,42 @@
+#homePageDiv{
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    height: 100vh;
+}
+.city-form-field{
+    width: 50vw;
+}
+.city-button{
+    width: 35vw;
+    text-align: center;
+}
+#title{
+    font-size: 8vw;
+    margin: 0 auto;
+    font-family: 'Russo One', sans-serif;
+    padding-bottom: 10vh;
+}
+.icons{
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+    padding-bottom: 0;
+    margin: 0 auto;
+}
+#underTitleLine{
+    color: whitesmoke;
+    background: whitesmoke;
+    width: 65vw;
+    max-height: 1vh;
+    padding-bottom: 10vh;
+}
+#recentCitiesDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 5vh;
+}
