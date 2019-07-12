@@ -1,4 +1,10 @@
-p{
-    color: white;
-    width:30vw;
+#resultPageDiv{
+    width:100vw;
+    color: whitesmoke;
+}
+#cityLabel{
+    font-size: 8vw;
+}
+img{
+    max-width: 15vw;
 }
