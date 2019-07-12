@@ -1,22 +1,37 @@
 <div id="resultPageDiv">
-  <span id="cityLabel">Kraków</span>
-  <div id="bigWeatherIcon">
-    <img src="../../assets/033-sun.svg" alt="Big Weather Icon">
-  </div>
-  <span id="tempLabel">30°C</span>
-  <span id="descriptionLabel">Sunny</span>
-  <div class="detailsDiv">
-    <span id="wind">Wind</span>
-    <span id="windInfo">3 m/s</span>
-  </div>
-  <div class="detailsDiv">
-      <span id="hummidity">Hummidity</span>
-      <span id="hummidityInfo">37 %</span>
-  </div>
-  <button mat-button matSuffix mat-icon-button routerLink="" >
-      Go back<mat-icon>close</mat-icon>
-  </button>
+    <button id="closeButton" mat-button matSuffix mat-icon-button routerLink="" >
+        Go back<mat-icon>close</mat-icon>
+    </button>
+  <div id="actualWeatherDiv">
+    <div id="bigWeatherIconDiv">
+        <span id="cityLabel">Kraków</span>
+      <img id="bigWeatherIcon" src="../../assets/033-sun.svg" alt="Big Weather Icon">
+    </div>
+    <div id="rightSide">
+      <div id="tempAndDescription">
+        <span id="tempLabel">30°C</span>
+        <span id="descriptionLabel">Sunny</span>
+      </div>
+      <div id="windAndHumidity">
+        <div id="windDiv" class="detailsDiv">
+          <span id="wind">Wind</span>
+          <span id="windInfo">3 m/s</span>
+        </div>
+        <div id="humidityDiv" class="detailsDiv">
+            <span id="humidity">Humidity</span>
+            <span id="humidityInfo">37 %</span>
+        </div>
+      </div>
+      <div class="windAndHumidityIconsDiv" id="windIcon">
+          <img id="windIcon" src="../../assets/017-wind.svg" alt="Wind">
+      </div>
+      <div class="windAndHumidityIconsDiv" id="humidityIcon">
+          <img id="humidityIcon" src="../../assets/019-thermometer.svg" alt="Humidity">
+      </div>
 
+    </div>
+  </div>
+  <div id="weatherForecastDiv">
 
-
+  </div>
 </div>
