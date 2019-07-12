@@ -112,17 +112,17 @@
 .forecastIconImg{
     margin: 1vh;
 } */
-@media only screen and (min-width: 900px){
+@media all and (min-width: 900px){
     #resultPageDiv{
         width:100vw;
         color: whitesmoke;
         text-align: center;
     }
     #cityLabel{
-        font-size: 8vw;
+        font-size: 7vw;
     }
     #bigWeatherIconDiv{
-        max-width: 23vw;
+        max-width: 20vw;
         grid-area: c4;
         display: flex;
         flex-direction: column;
@@ -145,7 +145,7 @@
         max-width: 14vw;
     }
     #tempAndDescription{
-        font-size: 8vw;
+        font-size: 7vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -199,7 +199,7 @@
         margin: 1vh 0 0 0;
     }
     .forecastIconImg{
-        max-width: 8vw;
+        max-width: 6vw;
     }
     .minMaxTemp{
         display: flex;
@@ -220,19 +220,51 @@
     #forecastTabs{
         display: flex;
         justify-content: space-between;
-    
     }
     .forecastIconImg{
         margin: 1vh;
     }
 }
 
-@media only screen and (max-width: 899px){
+@media all and (max-width: 899px){
 #resultPageDiv{
     display: flex;
     flex-direction: column;
-}
+    align-items:center;
+    /* background-image: url(/assets/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    color: whitesmoke;
+    overflow-x: hidden;
 
+
+}
+#closeButton{
+    position: absolute;
+    top: 1vh;
+    right: 10vw; 
+ }
+ #cityLabel{
+    font-size: 12vw;
+    text-align: center;
+    padding-top: 5vh;
+}
+#bigWeatherIconDiv{
+    max-width: 12vw;
+    grid-area: c4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: c1;
+    margin: 0 auto;
+}
+#bigWeatherIcon{
+max-width: 35vw;
+}
+#tempAndDescription{
+    order: -30;
+}
 
 
 
