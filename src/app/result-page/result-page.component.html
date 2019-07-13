@@ -5,7 +5,7 @@
   <div id="actualWeatherDiv">
     <div id="bigWeatherIconDiv">
       <span id="cityLabel">{{weather.name}}</span>
-      <img id="bigWeatherIcon" src="../../assets/WeatherForecastIcons/{{weather.weather[0].icon | lowercase}}.svg"
+      <img id="bigWeatherIcon" src="assets/WeatherForecastIcons/{{weather.weather[0].icon | lowercase}}.svg"
         alt="Big Weather Icon">
     </div>
     <div id="rightSide">
@@ -42,7 +42,7 @@
           <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
           <div class="forecastIconsDiv" class="forecastIcon">
             <img class="forecastIconImg"
-              src="../../assets/WeatherForecastIcons/{{forecastItem.weather[0].icon | lowercase}}.svg">
+              src="assets/WeatherForecastIcons/{{forecastItem.weather[0].icon | lowercase}}.svg">
           </div>
           <span class="forecastDescription">{{forecastItem.weather[0].main}}</span>
         </div>
@@ -64,7 +64,7 @@
             <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
             <div class="forecastIconsDiv" class="forecastIcon">
               <img class="forecastIconImg"
-                src="../../assets/WeatherForecastIcons/{{forecastItem.weather[0].icon | lowercase}}.svg"
+                src="assets/WeatherForecastIcons/{{forecastItem.weather[0].icon | lowercase}}.svg"
                 alt="forecastIcon">
             </div>
             <span class="forecastDescription">{{forecastItem.weather[0].main}}</span>
