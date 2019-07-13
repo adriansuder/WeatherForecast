@@ -188,12 +188,12 @@ max-width: 35vw;
     align-items: center;
     grid-area: x2;
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 10vh;
     
 }
 .windAndHumidityIconsDiv{
     margin: auto auto;
-    margin-top: 15vh;
+    margin-top: 10vh;
     
 }
 #windIcon{
@@ -216,7 +216,7 @@ max-width: 35vw;
 #minAnaMaxTemp{
     /* display: none; */
     display: flex;
-    margin-top:4vh;
+    margin-top:2vh;
     /* position: absolute;
     bottom: 3vh; */
     
@@ -241,6 +241,7 @@ max-width: 35vw;
 #FivedayWeatherLabel{
     max-width: 80vw;
     text-align: center;
+    margin-top: 12vh;
     
 }
 .mobileHr{
