@@ -8,8 +8,8 @@ import { Forecast } from '../models/forecast';
 })
 export class WeatherService {
 
-    private baseUrl = 'http://api.openweathermap.org/data/2.5/weather?units=metric&';
-    private forecastBaseUrl = 'http://api.openweathermap.org/data/2.5/forecast?';
+    private baseUrl = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?units=metric&';
+    private forecastBaseUrl = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?';
     private apikey = 'APPID=b26783a2ce95c1529a589fde9e728365';
 
     constructor(private http: HttpClient) { }
