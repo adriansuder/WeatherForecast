@@ -1,28 +1,26 @@
 <div id="homePageDiv">
-    <div class="icons">
+  <div class="icons">
     <mat-icon>cloud_queue</mat-icon>
     <mat-icon>wb_sunny</mat-icon>
     <mat-icon>cloud_queue</mat-icon>
-    </div>
-    <h1 id="title">Weather Forecast</h1>
-    <!-- <hr id="underTitleLine"> -->
-    <mat-form-field appearance="outline" class="city-form-field">
-      <input matInput type="text" placeholder="City" [(ngModel)]="value">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-    <button mat-raised-button class="city-button" routerLink="result"  color="primary">Search by city</button>
-  
-    
-    <div id="recentCitiesDiv">
-    <h2 id="recentTitle">Recent looking cities:</h2>
-    <h3 class="recentCities">Kraków</h3>
-    <h3 class="recentCities">Kraków</h3>
-    <h3 class="recentCities">Kraków</h3>
-    </div>
-    
-    <div class="autors">Autorzy: Adrian Suder | Mateusz Strzesak | WSEI Kraków</div>
-    <div class="footer">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-  
   </div>
+  <h1 id="title">Weather Forecast</h1>
+  <!-- <hr id="underTitleLine"> -->
+  <mat-form-field appearance="outline" class="city-form-field">
+    <input matInput type="text" placeholder="City" [(ngModel)]="value">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button class="city-button" color="primary" (click)="submit()">Search by city</button>
+
+  <div id="recentCitiesDiv">
+    <h2 id="recentTitle">Recent searched cities:</h2>
+
+    <span *ngFor="let city of rs.cities ">
+      <a [routerLink]="['/result', city]" class="recentSearches" routerLinkActive="router-link-active">{{city}}</a>
+    </span>
+  </div>
+
+  <div class="autors"></div>
+</div>

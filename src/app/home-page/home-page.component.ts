@@ -1,5 +1,6 @@
+import { RecentSearches } from './../models/recentSearches';
 import { Component, OnInit } from '@angular/core';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +9,48 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
-  public value: '';
+  constructor(private router: Router) { }
+  value: string;
+  ls: string;
+  public rs: RecentSearches;
+
   ngOnInit() {
+    const ls = window.localStorage.getItem('RecentSearches');
+    if (ls != null) {
+      const parsedJson = JSON.parse(ls);
+      const item: RecentSearches = parsedJson as RecentSearches;
+
+      this.rs = item;
+    }
   }
 
+  public submit() {
+    if (this.value != null) {
+      this.addCityToRecentSearches(this.value);
+      this.router.navigate(['/result', this.value]);
+    }
+  }
+
+  public addCityToRecentSearches(city: string) {
+    const ls = window.localStorage.getItem('RecentSearches');
+
+    if (ls != null) {
+      const parsedJson = JSON.parse(ls);
+      const item: RecentSearches = parsedJson as RecentSearches;
+      if (item.cities.length === 3) {
+        item.cities.pop();
+        item.cities.unshift(city);
+      } else {
+        item.cities.unshift(city);
+      }
+      const toLocalStorage = JSON.stringify(item);
+      window.localStorage.setItem('RecentSearches', toLocalStorage);
+    } else {
+      const item = {} as RecentSearches;
+      item.cities = [];
+      item.cities.unshift(city);
+      const toLocalStorage = JSON.stringify(item);
+      window.localStorage.setItem('RecentSearches', toLocalStorage);
+    }
+  }
 }

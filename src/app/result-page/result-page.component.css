@@ -107,6 +107,7 @@
     .mobileForecastDiv{
         display: flex;
         flex-direction: row;
+        display: none;
     }
     .forecastTab{
         margin: 2vh 3vw;
@@ -129,6 +130,9 @@
 @media all and (max-width: 899px){
     img{
         max-width: 20vw;
+    }
+    .fullScreen{
+        display: none;
     }
 #resultPageDiv{
     display: flex;
@@ -254,7 +258,7 @@ max-width: 35vw;
     align-items: center;
 }
 .forecastTab{
-    margin: 4vh;
+    margin: 3vh;
     text-align: center;
 }
 .minMaxTemp{
