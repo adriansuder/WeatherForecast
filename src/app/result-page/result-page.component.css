@@ -217,6 +217,8 @@ max-width: 35vw;
     /* display: none; */
     display: flex;
     margin-top:4vh;
+    /* position: absolute;
+    bottom: 3vh; */
     
 }
 .detailsDiv{
@@ -233,10 +235,13 @@ max-width: 35vw;
 #weatherForecastDiv{
     color: gray;
     overflow-x: scroll;
+    /* position: absolute;
+    top: 105vh; */
 }
 #FivedayWeatherLabel{
     max-width: 80vw;
     text-align: center;
+    
 }
 .mobileHr{
     color: gray;
@@ -269,3 +274,7 @@ max-width: 35vw;
 
 
 }
+
+
+
+
