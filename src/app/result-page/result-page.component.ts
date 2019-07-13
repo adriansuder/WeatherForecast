@@ -3,6 +3,7 @@ import { IWeather } from './../models/weather';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from '../services/weather.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-result-page',
@@ -24,11 +25,14 @@ export class ResultPageComponent implements OnInit {
     });
 
     const _weather = this.weatherService.getWeather(this.sub);
-    _weather.then(data => this.weather = data);
+    _weather.then(data => this.weather = data).catch((err: HttpErrorResponse) => {
+      this.router.navigate(['/']);
+    });
 
     const _forecast = this.weatherService.getForecast(this.sub);
-    console.log(_forecast);
-    _forecast.then(data => this.forecast = data);
+    _forecast.then(data => this.forecast = data).catch((err: HttpErrorResponse) => {
+      this.router.navigate(['/']);
+    });
   }
 }
 
