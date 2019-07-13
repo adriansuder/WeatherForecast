@@ -64,6 +64,11 @@
     max-width: 80vw;
     text-align: center;
 }
+.recentSearches {
+    color: #fff;
+    font-size: 1.6em;
+    text-decoration: none;
+}
 }
 
 @media all and (max-width: 899px){
@@ -131,5 +136,10 @@
         margin: 4vh 0;
         max-width: 80vw;
         text-align: center;
+    }
+    .recentSearches {
+        color: #fff;
+        font-size: 1.6em;
+        text-decoration: none;
     }
     }

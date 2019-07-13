@@ -1,166 +1,86 @@
 <div id="resultPageDiv">
-    <button id="closeButton" mat-button matSuffix mat-icon-button routerLink="" >
-        Go back<mat-icon>close</mat-icon>
-    </button>
+  <button id="closeButton" mat-button matSuffix mat-icon-button routerLink="">
+    Go back<mat-icon>close</mat-icon>
+  </button>
   <div id="actualWeatherDiv">
     <div id="bigWeatherIconDiv">
-        <span id="cityLabel">Kraków</span>
-      <img id="bigWeatherIcon" src="assets/033-sun.svg" alt="Big Weather Icon">
+      <span id="cityLabel">{{weather.name}}</span>
+      <img id="bigWeatherIcon" src="../../assets/WeatherForecastIcons/SVG/{{weather.weather[0].icon | lowercase}}.svg"
+        alt="Big Weather Icon">
     </div>
     <div id="rightSide">
       <div id="tempAndDescription">
-        <span id="tempLabel">30°C</span>
-        <span id="descriptionLabel">Sunny</span>
+        <span id="tempLabel">{{weather.main.temp}}°C</span>
+        <span id="descriptionLabel">{{weather.weather[0].main}}</span>
       </div>
-      
+
       <div id="windAndHumidity">
         <div id="windDiv" class="detailsDiv">
           <span id="wind">Wind</span>
-          <span id="windInfo">3 m/s</span>
+          <span id="windInfo">{{weather.wind.speed}} m/s</span>
         </div>
         <div id="humidityDiv" class="detailsDiv">
-            <span id="humidity">Humidity</span>
-            <span id="humidityInfo">37 %</span>
+          <span id="humidity">Humidity</span>
+          <span id="humidityInfo">{{weather.main.humidity}} %</span>
         </div>
       </div>
       <div class="windAndHumidityIconsDiv" id="windIcon">
-          <img id="windIcon" src="assets/017-wind.svg" alt="Wind">
+        <img id="windIcon" src="assets/017-wind.svg" alt="Wind">
       </div>
       <div class="windAndHumidityIconsDiv" id="humidityIcon">
-          <img id="humidityIcon" src="assets/019-thermometer.svg" alt="Humidity">
+        <img id="humidityIcon" src="assets/019-thermometer.svg" alt="Humidity">
       </div>
     </div>
   </div>
-  <!-- Poniższa sekcja widoczna tylko w wersji mobilnej -->
-  <div id="minAnaMaxTemp">
-      <div id="minDiv" class="detailsDiv">
-        <span id="minT">Min.°C</span>
-        <span id="minTInfo">30°C</span>
-      </div>
-      <div id="maxDiv" class="detailsDiv">
-          <span id="maxT">Max.°C </span>
-          <span id="maxTInfo">30°C</span>
-      </div>
-    
-    <div class="minAndMaxIconsDiv" id="minTIcon">
-        <img id="minTIcon" src="assets/018-thermometer.svg" alt="Wind">
-    </div>
-    <div class="minAndMaxIconsDiv" id="maxTIcon">
-        <img id="maxTIcon" src="assets/020-thermometer.svg" alt="Humidity">
-    </div>
-  </div> 
   <!-- SEKCJA Z PROGNOZĄ POGODY -->
   <div id="weatherForecastDiv">
-    <h1 id="FivedayWeatherLabel">5 day weather forecast for Kraków</h1>
+    <h1 id="FivedayWeatherLabel">5 hours weather forecast for {{weather.name}}</h1>
     <div id="forecastTabs">
 
-      <div class="mobileForecastDiv">
-    <div class="forecastTab" >
-      <div class="dateIconDescription">
-        <span class="forecastDate">21.07.2019</span>
-        <div class="forecastIconsDiv" class="forecastIcon">
-            <img class="forecastIconImg" src="assets/042-rain.svg" alt="forecastIcon">
-        </div>
-        <span class="forecastDescription">Sunny</span>
-      </div>
-      <div class="minMaxTemp">
-        <div class="minTemp">
-          <span class="minTempLabel">Min</span>
-          <span class="minTempValue">30°C</span>
-        </div>
-        <div class="maxTemp">
-            <span class="maxTempLabel">Max</span>
-            <span class="maxTempValue">30°C</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="forecastTab" >
+      <div class="forecastTab fullScreen" *ngFor="let forecastItem of forecast.list | slice:0:5">
         <div class="dateIconDescription">
-          <span class="forecastDate">22.07.2019</span>
+          <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
           <div class="forecastIconsDiv" class="forecastIcon">
-              <img class="forecastIconImg" src="assets/042-rain.svg" alt="forecastIcon">
+            <img class="forecastIconImg"
+              src="../../assets/WeatherForecastIcons/SVG/{{forecastItem.weather[0].icon | lowercase}}.svg">
           </div>
-          <span class="forecastDescription">Sunny</span>
+          <span class="forecastDescription">{{forecastItem.weather[0].main}}</span>
         </div>
         <div class="minMaxTemp">
           <div class="minTemp">
-            <span class="minTempLabel">Min</span>
-            <span class="minTempValue">30°C</span>
+            <span class="minTempLabel">Humidity</span>
+            <span class="minTempValue">{{forecastItem.main.humidity | decimalPipeConverter }}%</span>
           </div>
           <div class="maxTemp">
-              <span class="maxTempLabel">Max</span>
-              <span class="maxTempValue">30°C</span>
+            <span class="maxTempLabel">Temp</span>
+            <span class="maxTempValue">{{forecastItem.main.temp_max | temperatureConverter}}°C</span>
           </div>
         </div>
       </div>
-    </div>
 
-      <hr class="mobileHr">
-      <div class="mobileForecastDiv">
-      <div class="forecastTab" >
+      <div class="mobileForecastDiv" *ngFor="let forecastItem of forecast.list | slice:0:5">
+        <div class="forecastTab">
           <div class="dateIconDescription">
-            <span class="forecastDate">23.07.2019</span>
+            <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
             <div class="forecastIconsDiv" class="forecastIcon">
-                <img class="forecastIconImg" src="assets/042-rain.svg" alt="forecastIcon">
+              <img class="forecastIconImg"
+                src="../../assets/WeatherForecastIcons/SVG/{{forecastItem.weather[0].icon | lowercase}}.svg"
+                alt="forecastIcon">
             </div>
-            <span class="forecastDescription">Sunny</span>
+            <span class="forecastDescription">{{forecastItem.weather[0].main}}</span>
           </div>
           <div class="minMaxTemp">
             <div class="minTemp">
-              <span class="minTempLabel">Min</span>
-              <span class="minTempValue">30°C</span>
+              <span class="minTempLabel">Humidity</span>
+              <span class="minTempValue">{{forecastItem.main.humidity | decimalPipeConverter }}%</span>
             </div>
             <div class="maxTemp">
-                <span class="maxTempLabel">Max</span>
-                <span class="maxTempValue">30°C</span>
+              <span class="maxTempLabel">Temp</span>
+              <span class="maxTempValue">{{forecastItem.main.temp_max | temperatureConverter}}°C</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="forecastTab" >
-            <div class="dateIconDescription">
-              <span class="forecastDate">24.07.2019</span>
-              <div class="forecastIconsDiv" class="forecastIcon">
-                  <img class="forecastIconImg" src="assets/042-rain.svg" alt="forecastIcon">
-              </div>
-              <span class="forecastDescription">Sunny</span>
-            </div>
-            <div class="minMaxTemp">
-              <div class="minTemp">
-                <span class="minTempLabel">Min</span>
-                <span class="minTempValue">30°C</span>
-              </div>
-              <div class="maxTemp">
-                  <span class="maxTempLabel">Max</span>
-                  <span class="maxTempValue">30°C</span>
-              </div>
-            </div>
-          </div>
-        </div>
-          <hr class="mobileHr">
-          <div class="mobileForecastDiv">
-          <div class="forecastTab" >
-              <div class="dateIconDescription">
-                <span class="forecastDate">25.07.2019</span>
-                <div class="forecastIconsDiv" class="forecastIcon">
-                    <img class="forecastIconImg" src="assets/042-rain.svg" alt="forecastIcon">
-                </div>
-                <span class="forecastDescription">Sunny</span>
-              </div>
-              <div class="minMaxTemp">
-                <div class="minTemp">
-                  <span class="minTempLabel">Min</span>
-                  <span class="minTempValue">30°C</span>
-                </div>
-                <div class="maxTemp">
-                    <span class="maxTempLabel">Max</span>
-                    <span class="maxTempValue">30°C</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    </div>
   </div>
-</div>
