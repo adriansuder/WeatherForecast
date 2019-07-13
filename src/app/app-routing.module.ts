@@ -1,3 +1,4 @@
+import { IWeather } from './models/weather';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ResultPageComponent} from '../app/result-page/result-page.component';
@@ -6,8 +7,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: 'result',
-    component: ResultPageComponent,
+    path: 'result/:city',
+    component: ResultPageComponent
   },
   {
     path: '',

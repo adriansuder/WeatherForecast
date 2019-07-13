@@ -9,12 +9,17 @@ import {MatIconModule, MatIcon} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ResultPageComponent } from './result-page/result-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TemperatureConverterPipe } from './temperature-converter.pipe';
+import { DecimalConverterPipe } from './decimal.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    TemperatureConverterPipe,
+    DecimalConverterPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
