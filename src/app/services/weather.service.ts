@@ -7,7 +7,7 @@ import { Forecast } from '../models/forecast';
     providedIn: 'root'
 })
 export class WeatherService {
-
+    // proxy for HTTPS https://cors-anywhere.herokuapp.com/ for cross origin contents
     private baseUrl = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?units=metric&';
     private forecastBaseUrl = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?';
     private apikey = 'APPID=b26783a2ce95c1529a589fde9e728365';

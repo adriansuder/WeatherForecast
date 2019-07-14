@@ -9,6 +9,15 @@
 }
 .city-form-field{
     width: 50vw;
+    
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: whitesmoke!important;
+}
+
+
+mat-form-field.mat-form-field{
+    font-size: 1.5em;
 }
 .city-button{
     width: 35vw;
