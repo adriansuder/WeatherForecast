@@ -34,8 +34,13 @@
         "x1 x1 x1 x1 x1 "
         "x1 x1 x1 x1 x1 "
         " x3 x2 x2 x2 x4"
-        " x3 x2 x2 x2 x4 ";
+        " x3 x2 x2 x2 x4 "
+        " x6 x5 x5 x5 x7"
+        " x6 x5 x5 x5 x7";
         max-width: 45vw;
+    }
+    #descriptionLabel{
+        white-space: nowrap;
     }
     #bigWeatherIcon{
         max-width: 14vw;
@@ -54,9 +59,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 1em 1em;
+        /* margin: 1vw 2vw; */
         font-size: 2vw;
     }
+
+    #windDiv{ margin: 1vw 1vw 1vw 2vw; }
+    #humidityDiv{ margin: 1vw 2vw 1vw 1vw; }
     #windAndHumidity{
         display:flex;
         justify-content: center;
@@ -64,17 +72,34 @@
         grid-area: x2;
         text-align: center;
     }
+    #sunsetSunrise{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: x5;
+        text-align: center;
+    }
+    
     .windAndHumidityIconsDiv{
         margin: auto auto;
     }
     #windIcon{
         grid-area: x3;
-        max-width: 5vw;
+        max-width: 4vw;
     }
     #humidityIcon{
         grid-area: x4;
-        max-width: 5vw;
+        max-width: 4vw;
     }
+    #sunsetIcon{
+        grid-area: x6;
+        max-width: 4vw;
+    }
+    #sunriseIcon{
+        grid-area: x7;
+        max-width: 4vw;
+    }
+    
     #actualWeatherDiv{
         height: 60vh;
         display: grid;
@@ -238,7 +263,7 @@ max-width: 35vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3vw;
+    margin: 1vw 2vw;
     font-size: 5vw;
 }
 #minTIcon{
