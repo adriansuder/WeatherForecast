@@ -12,7 +12,7 @@
     </div>
     <div id="rightSide">
       <div id="tempAndDescription">
-        <span id="tempLabel">{{weather.main.temp}}°C</span>
+        <span id="tempLabel">{{weather.main.temp | number:'1.0-0'}}°C</span>
         <span id="descriptionLabel">{{weather.weather[0].main}}</span>
       </div>
 

@@ -228,7 +228,7 @@ max-width: 35vw;
     justify-content: center;
     align-items: center;
     /* margin: 3vw; */
-    font-size: 5vw;
+    font-size: 4vw;
 }
 #windDiv{ margin: 1vw 1vw 1vw 2vw; }
 #humidityDiv{ margin: 1vw 2vw 1vw 1vw; }
@@ -256,19 +256,19 @@ max-width: 35vw;
 }
 #sunsetIcon{
     grid-area: x6;
-    max-width: 18vw;
+    max-width: 15vw;
 }
 #sunriseIcon{
     grid-area: x7;
-    max-width: 18vw;
+    max-width: 15vw;
 }
 #windIcon{
     grid-area: x3;
-    max-width: 18vw;
+    max-width: 15vw;
 }
 #humidityIcon{
     grid-area: x4;
-    max-width: 18vw;
+    max-width: 15vw;
 }
 #rightSide{
     margin: auto auto;
@@ -309,7 +309,7 @@ max-width: 35vw;
 #FivedayWeatherLabel{
     max-width: 80vw;
     text-align: center;
-    margin-top: 12vh;
+    margin-top: 17vh;
     
 }
 .mobileHr{
