@@ -18,6 +18,11 @@ export class ResultPageComponent implements OnInit {
   public forecast: Forecast;
   sub: string;
 
+  scrollToElement($element): void {
+    const element = document.querySelector("#FivedayWeatherLabel")
+    if(element)element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+ 
   ngOnInit() {
 
     this.activatedRoute.params.subscribe(params => {

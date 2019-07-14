@@ -11,6 +11,10 @@
         padding-bottom: 2vh; 
         white-space: nowrap;
     }
+    #arrowDown{
+        display: none;
+    
+    }
     .mobileHr{
         display:none;
     }
@@ -80,8 +84,11 @@
         text-align: center;
     }
     
-    .windAndHumidityIconsDiv{
+    .windAndHumidityIconsDiv {
         margin: auto auto;
+    }
+    .sunsetSunriseIconsDiv{
+        margin: 0 auto;
     }
     #windIcon{
         grid-area: x3;
@@ -180,10 +187,11 @@
     right: 12vw; 
  }
  #cityLabel{
-    font-size: 12vw;
+    font-size: 10vw;
     text-align: center;
     padding-top: 5vh;
     padding-bottom: 4vh;
+    white-space: nowrap;
 }
 #bigWeatherIconDiv{
     max-width: 12vw;
@@ -197,6 +205,9 @@
 }
 #bigWeatherIcon{
 max-width: 35vw;
+}
+.descriptionLabel{
+    white-space: nowrap;
 }
 
 #tempAndDescription{
@@ -216,9 +227,11 @@ max-width: 35vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3vw;
+    /* margin: 3vw; */
     font-size: 5vw;
 }
+#windDiv{ margin: 1vw 1vw 1vw 2vw; }
+#humidityDiv{ margin: 1vw 2vw 1vw 1vw; }
 #windAndHumidity{
     display:flex;
     justify-content: center;
@@ -228,10 +241,26 @@ max-width: 35vw;
     margin-top: 10vh;
     
 }
+#sunsetSunrise{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: x5;
+    text-align: center;
+}
+
 .windAndHumidityIconsDiv{
     margin: auto auto;
     margin-top: 10vh;
     
+}
+#sunsetIcon{
+    grid-area: x6;
+    max-width: 18vw;
+}
+#sunriseIcon{
+    grid-area: x7;
+    max-width: 18vw;
 }
 #windIcon{
     grid-area: x3;
@@ -245,10 +274,12 @@ max-width: 35vw;
     margin: auto auto;
     display: grid;
     grid-template: 
-    "x1 x1 x1 x1"
-    "x1 x1 x1 x1"
-    " x3 x2 x2 x4"
-    " x3 x2 x2 x4 ";
+        "x1 x1 x1 x1 x1 "
+        "x1 x1 x1 x1 x1 "
+        " x3 x2 x2 x2 x4"
+        " x3 x2 x2 x2 x4 "
+        " x6 x5 x5 x5 x7"
+        " x6 x5 x5 x5 x7";
 }
 #minAnaMaxTemp{
     /* display: none; */
@@ -308,6 +339,11 @@ max-width: 35vw;
 }
 .forecastIconImg{
     margin: 1vh;
+}
+#arrowDown{
+    position: absolute;
+    bottom: 2vh;
+    cursor: pointer;
 }
 
 

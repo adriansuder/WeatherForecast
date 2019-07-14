@@ -12,6 +12,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TemperatureConverterPipe } from './temperature-converter.pipe';
 import { DecimalConverterPipe } from './decimal.pipe';
+import { RouterModule } from '@angular/router';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +32,10 @@ import { DecimalConverterPipe } from './decimal.pipe';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPageScrollCoreModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

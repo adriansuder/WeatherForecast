@@ -36,23 +36,28 @@
       <div id="sunsetSunrise">
           <div id="windDiv" class="detailsDiv">
             <span id="wind">Sunrise</span>
-            <span id="windInfo">{{weather.sys.sunrise * 1000 | date:'HH:mm'}}</span>
+            <span id="windInfo">{{weather.sys.sunrise * 1000 | date:'HH:mm'}} UTC</span>
           </div>
           <div id="humidityDiv" class="detailsDiv">
             <span id="humidity">Sunset</span>
-            <span id="humidityInfo">{{weather.sys.sunset * 1000 | date:'HH:mm'}}</span>
+            <span id="humidityInfo">{{weather.sys.sunset * 1000 | date:'HH:mm'}} UTC</span>
           </div>
         </div>
         <div class="sunsetSunriseIconsDiv" >
             <img id="sunriseIcon" src="assets/046-sunny.svg" alt="Sunrise">
           </div>
-          <div class="windAndHumidityIconsDiv" >
+          <div class="sunsetSunriseIconsDiv" >
             <img id="sunsetIcon" src="assets/048-sunset.svg" alt="Sunset">
           </div>
     </div>
   </div>
+  <!-- <mat-icon id="arrowDown">keyboard_arrow_down</mat-icon> -->
+  <button (click)="scrollToElement()" id="arrowDown"  mat-button mat-icon-button >
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
   <!-- SEKCJA Z PROGNOZĄ POGODY -->
-  <div id="weatherForecastDiv">
+  <div  id="weatherForecastDiv">
+
     <h1 id="FivedayWeatherLabel">Hourly weather forecast for {{weather.name}}</h1>
     <div id="forecastTabs">
 
