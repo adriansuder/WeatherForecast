@@ -4,9 +4,11 @@
   </button>
   <div id="actualWeatherDiv">
     <div id="bigWeatherIconDiv">
-      <span id="cityLabel">{{weather.name}}</span>
+        <span id="cityLabel">{{weather.name}}</span>
+        <div id="bigWeatherImgDiv">
       <img id="bigWeatherIcon" src="assets/WeatherForecastIcons/{{weather.weather[0].icon | lowercase}}.svg"
         alt="Big Weather Icon">
+      </div>
     </div>
     <div id="rightSide">
       <div id="tempAndDescription">

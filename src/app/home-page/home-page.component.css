@@ -54,21 +54,26 @@
     max-width: 80vw;
     text-align: center;
 }
-.autors{
-    color: whitesmoke;
-    font-size: 1.6em;
-    text-decoration: none;
-    position: absolute;
-    bottom: 0;
-    margin: 4vh 0;
-    max-width: 80vw;
-    text-align: center;
-}
 .recentSearches {
     color: #fff;
     font-size: 1.6em;
     text-decoration: none;
 }
+.recentCityLabel{
+    margin-top: 4vh;
+    font-size: 1.2vw;
+}
+.recentCityLabel::first-line{
+    text-transform: capitalize;
+}
+.recentCityLabel:hover{
+    margin-top: 4vh;
+    transform: scale(1.5);
+}
+#recentTitle{
+    font-size: 2vw;
+}
+
 }
 
 @media all and (max-width: 899px){
@@ -81,7 +86,7 @@
         height: 100vh;
     }
     .city-form-field{
-        width: 50vw;
+        width: 70vw;
     }
     .city-button{
         width: 35vw;
@@ -127,19 +132,21 @@
         max-width: 80vw;
         text-align: center;
     }
-    .autors{
-        color: whitesmoke;
-        font-size: 0.7em;
-        text-decoration: none;
-        position: absolute;
-        bottom: 0;
-        margin: 4vh 0;
-        max-width: 80vw;
-        text-align: center;
-    }
     .recentSearches {
         color: #fff;
         font-size: 1.6em;
         text-decoration: none;
     }
+    .recentCityLabel{
+        margin-top: 4vh;
+        font-size: 2vh;
+    }
+    .recentCityLabel:hover{
+        margin-top: 4vh;
+        transform: scaleY(1.5);
+    }
+    .recentCityLabel::first-line{
+        text-transform: capitalize;
+    }
+
     }

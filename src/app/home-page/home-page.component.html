@@ -17,7 +17,7 @@
   <div id="recentCitiesDiv">
     <h2 id="recentTitle">Recent searched cities:</h2>
 
-    <span *ngFor="let city of rs.cities ">
+    <span class="recentCityLabel" *ngFor="let city of rs.cities ">
       <a [routerLink]="['/result', city]" class="recentSearches" routerLinkActive="router-link-active">{{city}}</a>
     </span>
   </div>
