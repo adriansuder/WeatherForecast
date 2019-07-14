@@ -18,7 +18,7 @@ export class ResultPageComponent implements OnInit {
   public forecast: Forecast;
   sub: string;
 
-  scrollToElement($element): void {
+  scrollToElement(): void {
     const element = document.querySelector("#FivedayWeatherLabel")
     if(element)element.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
