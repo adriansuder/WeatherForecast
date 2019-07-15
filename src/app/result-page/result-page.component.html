@@ -4,26 +4,26 @@
   </button>
   <div id="actualWeatherDiv">
     <div id="bigWeatherIconDiv">
-        <span id="cityLabel">{{weather.name}}</span>
+        <span id="cityLabel">{{weather?.name}}</span>
         <div id="bigWeatherImgDiv">
-      <img id="bigWeatherIcon" src="assets/WeatherForecastIcons/{{weather.weather[0].icon | lowercase}}.svg"
+      <img id="bigWeatherIcon" src="assets/WeatherForecastIcons/{{weather?.weather[0].icon | lowercase}}.svg"
         alt="Big Weather Icon">
       </div>
     </div>
     <div id="rightSide">
       <div id="tempAndDescription">
-        <span id="tempLabel">{{weather.main.temp | number:'1.0-0'}}°C</span>
-        <span id="descriptionLabel">{{weather.weather[0].main}}</span>
+        <span id="tempLabel">{{weather?.main.temp | number:'1.0-0'}}°C</span>
+        <span id="descriptionLabel">{{weather?.weather[0]?.main}}</span>
       </div>
 
       <div id="windAndHumidity">
         <div id="windDiv" class="detailsDiv">
           <span id="wind">Wind</span>
-          <span id="windInfo">{{weather.wind.speed}} m/s</span>
+          <span id="windInfo">{{weather?.wind.speed}} m/s</span>
         </div>
         <div id="humidityDiv" class="detailsDiv">
           <span id="humidity">Humidity</span>
-          <span id="humidityInfo">{{weather.main.humidity}}%</span>
+          <span id="humidityInfo">{{weather?.main.humidity}}%</span>
         </div>
       </div>
       <div class="windAndHumidityIconsDiv" id="windIcon">
@@ -36,11 +36,11 @@
       <div id="sunsetSunrise">
           <div id="windDiv" class="detailsDiv">
             <span id="wind">Sunrise</span>
-            <span id="windInfo">{{weather.sys.sunrise * 1000 | date:'HH:mm'}} UTC</span>
+            <span id="windInfo">{{weather?.sys.sunrise * 1000 | date:'HH:mm'}} UTC</span>
           </div>
           <div id="humidityDiv" class="detailsDiv">
             <span id="humidity">Sunset</span>
-            <span id="humidityInfo">{{weather.sys.sunset * 1000 | date:'HH:mm'}} UTC</span>
+            <span id="humidityInfo">{{weather?.sys.sunset * 1000 | date:'HH:mm'}} UTC</span>
           </div>
         </div>
         <div class="sunsetSunriseIconsDiv" >
@@ -58,10 +58,10 @@
   <!-- SEKCJA Z PROGNOZĄ POGODY -->
   <div  id="weatherForecastDiv">
 
-    <h1 id="FivedayWeatherLabel">Hourly weather forecast for {{weather.name}}</h1>
+    <h1 id="FivedayWeatherLabel">Hourly weather forecast for {{weather?.name}}</h1>
     <div id="forecastTabs">
 
-      <div class="forecastTab fullScreen" *ngFor="let forecastItem of forecast.list | slice:0:5">
+      <div class="forecastTab fullScreen" *ngFor="let forecastItem of forecast?.list | slice:0:5">
         <div class="dateIconDescription">
           <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
           <div class="forecastIconsDiv" class="forecastIcon">
@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      <div class="mobileForecastDiv" *ngFor="let forecastItem of forecast.list | slice:0:5">
+      <div class="mobileForecastDiv" *ngFor="let forecastItem of forecast?.list | slice:0:5">
         <div class="forecastTab">
           <div class="dateIconDescription">
             <span class="forecastDate">{{forecastItem.dt * 1000 | date:'HH:mm'}} UTC</span>
