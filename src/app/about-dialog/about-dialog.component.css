@@ -1,0 +1,8 @@
+#aboutText>a{
+    text-decoration: none;
+    background: rgba(0,0,0,0)!important;
+    color:whitesmoke;
+}
+*{
+    text-align: center;
+}

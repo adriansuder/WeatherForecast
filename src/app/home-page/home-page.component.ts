@@ -1,15 +1,21 @@
 import { RecentSearches } from './../models/recentSearches';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { aboutDialogComponent } from '../about-dialog/about-dialog.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
+
+
 export class HomePageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog:MatDialog) { }
+  title='WeatherForecast About'
   value: string;
   ls: string;
   public rs: RecentSearches;
@@ -53,4 +59,24 @@ export class HomePageComponent implements OnInit {
       window.localStorage.setItem('RecentSearches', toLocalStorage);
     }
   }
+
+  openModal() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+        id: 1,
+        title: 'WeatherForecast About'
+    };
+
+    const dialogRef = this.dialog.open(aboutDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('closed dialog')
+    });
+  }
+
+
 }
+

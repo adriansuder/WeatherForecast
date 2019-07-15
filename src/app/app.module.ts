@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule, MatButtonModule} from '@angular/material';
+import {MatInputModule, MatButtonModule, MatDialogModule} from '@angular/material';
 import {MatIconModule, MatIcon} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ResultPageComponent } from './result-page/result-page.component';
@@ -14,6 +14,7 @@ import { TemperatureConverterPipe } from './temperature-converter.pipe';
 import { DecimalConverterPipe } from './decimal.pipe';
 import { RouterModule } from '@angular/router';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { aboutDialogComponent } from './about-dialog/about-dialog.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     ResultPageComponent,
     HomePageComponent,
     TemperatureConverterPipe,
-    DecimalConverterPipe
+    DecimalConverterPipe,
+    aboutDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +35,10 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    NgxPageScrollCoreModule
+    NgxPageScrollCoreModule,
+    MatDialogModule
   ],
-
+  entryComponents: [aboutDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

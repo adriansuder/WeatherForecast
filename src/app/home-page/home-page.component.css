@@ -14,7 +14,24 @@
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
     color: whitesmoke!important;
 }
-
+#aboutButton{
+    position: absolute;
+    top: 1vh;
+    right: 1.5vw;
+    background: transparent;
+    border: none;
+    color: whitesmoke;
+    opacity: 0.8;
+}
+#aboutButton:visited, #aboutButton:active{
+    border: none;
+    background: transparent;
+}
+#aboutButton:hover{
+    transform: scale(1.3);
+    text-decoration: underline; 
+    color: rgb(194,24,91);
+}
 
 mat-form-field.mat-form-field{
     font-size: 1.5em;
@@ -156,6 +173,31 @@ mat-form-field.mat-form-field{
     }
     .recentCityLabel::first-line{
         text-transform: capitalize;
+    }
+
+    #aboutButton{
+        position: absolute;
+        top: 1vh;
+        right: 2vw;
+        background: transparent;
+        border: none;
+        color: whitesmoke;
+        opacity: 0.8;
+    }
+    #aboutButton:visited, #aboutButton:active{
+        border: none;
+        background: transparent;
+    }
+    #aboutButton:hover, #aboutButton:active{
+        transform: scale(0.9);
+        position: absolute;
+        top: 1.1vh;
+        right: 2.2vw;
+        text-decoration: underline; 
+        color: rgb(194,24,91);
+    }
+    ::ng-deep .mat-dialog-container{
+        background:rgba(42, 42, 42, 0.97)!important;
     }
 
     }
